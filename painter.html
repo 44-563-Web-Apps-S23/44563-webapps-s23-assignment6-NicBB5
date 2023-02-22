@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Painter Page</title>
+</head>
+ 
+<body>
+<h1>Painter entry Nicolas Black</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="hidden-painter-name">The hidden painter name:</label>
+    <input type ="password" id="hidden-painter-name" name="hidden-painter-name" value="Monet"> <br>
+
+    <label for="guess-painter-name">Guess the painter:</label>
+    <input type ="text" id="guess-painter-name" name="guess-painter-name" autofocus> <br>
+
+    <button type="button" onclick="checkPainter()">Check the guess</button>
+</form>
+<div id="result"></div>
+
+
+<p id="result">This text will be replaced </p>
+
+<script>
+let good = 0
+let oops = 0
+
+function checkPainter(){
+    const hiddenPainter = document.getElementById("hidden-painter-name").value
+    const guessedPainter = document.getElementById("guess-painter-name").value
+
+    if (hiddenPainter == guessedPainter){
+        good++
+        alert("You got it right")
+    }
+    else{
+        oops++
+        alert("Sorry")
+    }
+
+    const resultElement = document.getElementById("result")
+    resultElement.innerHTML = "Good: " + good + ", Oops: " + oops
+}
+</script>
+
+</body>
+</html> 
