@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conversions Webpage</title>
+    </head>
+ 
+<body>
+
+<h2>Nicolas Black Shows Currency Conversions</h2>
+
+<form>
+    <label for="form1_age">Enter base amount </label>
+    <input type ="number" id="base-amount" value="50" > <br>
+
+    <label for="form1_nick">Enter the conversion rate </label>
+    <input type ="number" id="conversion-rate" value="35"> <br>
+
+    <input type="button" onclick="convert()" value="Show conversions">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function convert(){
+    console.log("Show conversions")
+    amount = document.getElementById("base-amount").value
+    conversion = document.getElementById("conversion-rate").value
+    var toShow = ""
+
+
+    for(i = 0; i < 5; i++){
+        value = amount * Math.pow(2, i)
+        convertedValue = value * conversion
+        toShow += value + " is " + convertedValue + "; "
+    }
+    
+    document.getElementById("result").innerHTML = "Conversions are: " + toShow
+}
+</script>
+
+</body>
+</html> 
