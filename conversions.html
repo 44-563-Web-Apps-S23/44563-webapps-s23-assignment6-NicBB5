@@ -59,8 +59,42 @@ function convert(){
         amount = document.getElementById("base-amount").value
         conversion = document.getElementById("conversion-rate").value
         var toShow = ""
+        var max = 0
+        var min = 0
+        var average = 0
+
+        for(i = 0; i < 5; i++){
+            value = amount * Math.pow(2, i)
+            convertedValue = value * conversion
+        if(document.getElementById("average").checked){
+            average += convertedValue
+        }
+        if(document.getElementById("max").checked){
+            if(convertedValue > max){
+                max = convertedValue
+            }
+        }
+        if(document.getElementById("min").checked){
+            if(min ==0){
+                min = convertedValue
+            }
+            else if(convertedValue < min){
+                min = convertedValue
+            }
+        }
     }
-    document.getElementById("result2").innerHTML = "Conversions are: " + toShow
+    if(document.getElementById("max").checked){
+        toShow += "Max is " + max + "; "
+    }
+    if(document.getElementById("min").checked){
+        toShow += "Min is " + min + "; "
+    }
+    if(document.getElementById("average").checked){
+        average = average/5
+        toShow += "Average is " + average + "; "
+    }
+    document.getElementById("result2").innerHTML = "Op is " + toShow
+    }
 </script>
 
 </body>
