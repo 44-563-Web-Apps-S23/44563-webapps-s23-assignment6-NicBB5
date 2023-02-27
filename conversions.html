@@ -39,6 +39,30 @@ function convert(){
     document.getElementById("result").innerHTML = "Conversions are: " + toShow
 }
 </script>
+<br>
+<form>
+    <input type="radio" id="average" value="mean" onclick="chooseOp()">
+    <label for="average">average</label></br>
+
+    <input type="radio" id="max" value="maximum" onclick="chooseOp()">
+    <label for="max">max</label></br>
+
+    <input type="radio" id="min" value="minimum" onclick="chooseOp()">
+    <label for="min">min</label></br>
+</form>
+
+<p id="result2">This text will be replaced </p>
+
+<script>
+    function chooseOp(){
+        console.log("Math")
+        amount = document.getElementById("base-amount").value
+        conversion = document.getElementById("conversion-rate").value
+        var toShow = ""
+        
+    }
+    document.getElementById("result2").innerHTML = "Conversions are: " + toShow
+</script>
 
 </body>
 </html> 
